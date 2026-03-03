@@ -1,0 +1,644 @@
+// import local scss files
+@import "font", "variables", "reset";
+
+
+
+/* Responsive for Mobile */
+@media (max-width: 767px){
+
+    /* ========== common css ========== */
+    section:not(.front-slider){
+        padding: 35px 10px;
+    }
+    [class*=inner]{
+        width: 100% !important;
+    }
+    .front-header{
+        h2{
+            padding-left: 5px;
+            font-size: 20px;
+        }
+    }
+
+
+
+    /* ========== header ========== */
+    header{
+        .header-inner{
+            padding: 0 10px;
+
+            .logo-search{
+                .logo{
+                    img{ width: 180px; }
+                }
+                .search{ display: none; }
+                .login-register-btns{
+                    button{
+                        padding: 5px;
+                        font-size: 13px;
+                    }
+                }
+            }
+            
+
+            .gnb{
+                .trigger{
+                    transform: translateY(-2px);
+
+                    &:before{ background: url('/img/icon-category-search.png'); }
+
+                    span{ display: none; }
+                }
+
+                a{
+                    &:first-child:after{ display: none; }
+                }
+
+                .special-navi{
+                    // width: 360px;
+                    white-space: nowrap;
+                    overflow-y: hidden;
+                }
+            }
+        }
+
+        .mega-navi{
+            display: block;
+            width: 300px;
+            height: 100vh;
+            padding-top: 60px;
+            position: fixed;
+            top: 0;
+            left: -300px;
+
+            .search-mobile{
+                display: block;
+                width: 280px;
+                margin: auto;
+            }
+
+            .mega-navi-inner{
+                width: 100%;
+                flex-direction: column;
+
+                .mega-navi-item{
+                    &:last-child b{ border: none; }
+
+                    b{
+                        display: block;
+                        padding: 5px 15px;
+                        border-bottom: 1px solid $dim-black;
+                        color: $dark-gray;
+                        cursor: pointer;
+
+                        &:after{
+                            content: '\f4fe';
+                            font-family: $bs-font;
+                            font-size: 18px;
+                            color: $silver-black;
+                            float: right;
+                        }
+                        
+                        &.active{ color: $white; }
+
+                        &.active:after{
+                            content: '\f2ea';
+                            color: $white;
+                        }
+                    }
+
+                    .mega-navi-item-wrap{
+                        display: none;
+                        padding: 10px 15px;
+                    }
+                }
+            }
+
+            .btn-mega-navi-close{
+                display: block;
+                background-color: transparent;
+                border: none;
+                font-size: 1.3em;
+                color: $white;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    }
+
+
+
+    /* ========== footer ========== */
+    footer{
+        padding: 30px 0;
+
+        .footer-inner{
+            padding: 0 20px;
+
+            .lnb-wrap{
+                flex-direction: column;
+                gap: 50px;
+                border: none;
+
+                .footer-slogan{
+                    h2{
+                        font-size: 1.8em;
+                        color: $white;
+                        text-align: center;
+                    }
+                }
+
+                .lnb{
+                    flex-direction: column;
+
+                    .link-item{
+                        .link-item-title{
+                            padding: 10px 0;
+                            border-bottom: 1px solid $silver-black;
+                            cursor: pointer;
+                            pointer-events: all;
+
+                            &:after{
+                                content: '\f282';
+                                font-family: $bs-font;
+                                float: right;
+                                margin-right: 5px;
+                            }
+
+                            &.active:after{ transform: rotateX(180deg); }
+                        }
+
+                        .link-item-content{
+                            display: none;
+                            padding: 5px 0;
+
+                            a{ padding: 3px 0; }
+                        }
+                    }
+                }
+            }
+
+            .copyright-wrap{
+                flex-direction: column;
+                padding-top: 10px;
+                text-align: center;
+
+                .company-info-trigger{
+                    display: block;
+                    font-weight: 400;
+                    color: $white;
+                }
+
+                address{ display: none; }
+
+                .sns{ margin-top: 10px; }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : front slider ========== */
+    .front-slider{
+        .front-slider-items{
+            .front-slider-item{
+                .front-slider-item-wrap{
+                    width: 100%;
+                    flex-direction: column;
+
+                    .desc{
+                        margin-top: 20px;
+
+                        h1{
+                            font-size: 24px;
+                            margin: 5px 0;
+                        }
+                    }
+
+                    .pic{
+                        img{
+                            height: 50%;
+                            transform: translateY(20px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : category shortcut ========== */
+    .category-shortcut{
+        .category-shortcut-inner{
+            .category-shortcut-items{
+                flex-wrap: wrap;
+
+                .category-shortcut-item{
+                    flex-basis: 25%;
+                    height: auto;
+                    box-shadow: none;
+
+                    span{ font-size: 14px; }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : focus class ========== */
+    .focus-class{
+        .focus-class-inner{
+            .focus-class-content{
+                overflow-x: hidden;
+
+                @at-root .focus-class-items{
+                    width: 480px;
+
+                    .focus-class-item{
+                        .thum{ height: 120px; }
+
+                        .overview{
+                            min-height: 95px;
+
+                            h4{
+                                width: 100%;
+                                font-size: 12px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                line-clamp: 2;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
+
+                            .class-info{ font-size: 12px; }
+
+                            .class-price{
+                                transform-origin: left;
+                                transform: scale(0.7);
+                                white-space: nowrap;
+                            }
+
+                            .class-review{ font-size: 10px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : best class ========== */
+    .best-class{
+        .best-class-inner{
+            .best-class-content{
+                .best-class-wrap{
+                    flex-direction: column;
+                    gap: 0;
+
+                    .invite-banner{
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .best-class-items-outer{
+                        margin-top: 10px;
+
+                        .best-class-items{
+                            flex-direction: column;
+                            gap: 0;
+
+                            .best-class-item{
+                                .overview{
+                                    .class-price{
+                                        transform-origin: left;
+                                        transform: scale(0.9);
+                                        white-space: nowrap;
+                                    }
+
+                                    h4{ font-size: 14px; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : early bird ========== */
+    .early-bird{
+        .early-bird-inner{
+            .early-bird-content{
+                .countdown-wrap{
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                    #early-bird-countdown{ font-size: 22px; }
+                }
+
+                .early-bird-banner{
+                    padding: 20px;
+                    flex-direction: column;
+
+                    .banner-about{
+                        h1{ font-size: 16px; }
+                        .hash-tag{ font-size: 16px; }
+                    }
+
+                    .banner-thum{
+                        img{ display: none; }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : blog ========== */
+    .blog{
+        .blog-inner{
+            .blog-content{
+                .blog-items{
+                    flex-direction: column;
+
+                    .blog-item{ margin-bottom: 10px; }
+                }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : slogan ========== */
+    .slogan{
+        padding: 20px 0 !important;
+
+        .slogan-inner{
+            .slogan-content{
+                padding: 0 20px;
+
+                h1{ font-size: 22px; }
+                span{ font-size: 16px; }
+            }
+        }
+    }
+
+
+
+    /* ========== Section : Tip & Tech ========== */
+    .tip-tech{
+        .tip-tech-inner{
+            .tip-tech-content{
+                .tip-tech-wrap{
+                    .tip-tech-items{
+                        flex-direction: column;
+
+                        .tip-tech-item{
+                            .tip-tech-info{
+                                h3{ font-size: 14px; }
+
+                                p{
+                                    width: 100%;
+                                    font-size: 13px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: -webkit-box;
+                                    line-clamp: 2;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    /* ########## Category Main : category-main.html ########## */
+    .category-class{
+        .category-class-inner{
+            .category-class-wrap{ overflow-x: hidden; }
+
+            .category-class-detail{
+                .category-shortcut-btn-group{
+                    .btn-shortcut{
+                        padding: 5px 7px;
+                        font-size: 12px;
+                        margin-right: 3px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    /* ########## Take Course & Cart : take-course.html ########## */
+    .take-course{
+        padding: 0 !important;
+
+        .take-course-inner{
+            flex-direction: column;
+            gap: 0;
+
+            > div{
+                padding: 20px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .cart-wrap{
+                .cart-items{
+                    .cart-item{
+                        .thum{ width: 60px; }
+
+                        .cart-overview{
+                            .cart-overview-detail{
+                                flex-direction: column;
+                                gap: 0;
+
+                                .cart-overview-price{
+                                    text-align: left;
+
+                                    > *{ display: inline-block; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .payment{ border-top: 1px dashed $dim-gray; }
+        }
+    }
+
+
+
+
+
+    /* ########## Class Detail : class-detail.html ########## */
+    .class-detail-image{
+        .class-detail-image-inner{
+            height: auto;
+            padding-top: 30px;
+            flex-direction: column;
+
+            .heading{ display: none; }
+
+            .cover-image{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .class-detail-full{
+        padding: 0 !important;
+
+        .class-detail-full-inner{
+            .class-detail-full-content{
+                flex-direction: column-reverse;
+
+                > div{
+                    padding: 10px;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+
+                .class-detail-info{
+                    .class-detail-navigation{
+                        overflow-y: hidden;
+                        gap: 10px;
+
+                        a{
+                            white-space: nowrap;
+                            font-size: 14px;
+                        }
+                    }
+
+                    /* Article: Class Introduce */
+                    .class-introduce{
+                        * img{ width: 100%; }
+                    }
+
+                    /* Article: Class Curriculum */
+                    .class-curriculum{
+                        .curriculum-accordion{
+                            .accordion-item-wrap{
+                                .chapter-title{
+                                    font-size: 13px;
+
+                                    .chapter-hour{
+                                        display: none;
+                                    }
+                                }
+
+                                .chapter-content{
+                                    .chapter-content-class{
+                                        .class-subject{
+                                            font-size: 13px;
+                                        }
+                                        .class-hour{
+                                            .class-hour-detail{
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    /* Article: Class Review */
+                    .class-review{
+                        .class-detail-wrap{
+                            .review-group{ flex-direction: column; }
+                        }
+                    }
+
+                    /* Article: Class Mentor */
+                    .class-mentor{
+                        .class-detail-wrap{ flex-direction: column; }
+                    }
+                }
+
+                .class-detail-sidebar{
+                    position: static;
+
+                    .class-detail-sidebar-wrap.group-required-info{
+                        .overview{
+                            .class-price{
+                                justify-content: flex-end;
+
+                                .sale{ margin-right: 30px; }
+
+                                .price-current{ margin-right: 50px; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    /* ########## Front Event Banner ########## */
+    .front-event-banner{
+        width: 330px;
+        bottom: 50px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+
+
+    /* ########## Login Modal ########## */
+    .member-login-overlay{
+        .member-login{
+            width: 90%;
+            padding: 15px 30px;
+
+            .member-account{ margin-bottom: 10px; }
+            .join-member{ margin-bottom: 10px; }
+        }
+    }
+
+
+    /* ########## Class Share Modal ########## */
+    .class-share-overlay{
+        .class-share{
+            width: 90%;
+        }
+    }
+}
+
+
+
+@media (min-width: 400px) and (max-width: 767px){
+    .focus-class-items{
+        width: 560px;
+    }
+}
