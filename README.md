@@ -32,7 +32,7 @@
 ## 🔗 작업 결과물
 
 - 🌐 **웹사이트 바로가기**  
-  👉 https://kimdo0-0515.github.io/beyond-insight/
+  👉 [비욘드 인사이트](https://kimdo0-0515.github.io/beyond-insight/)
 
 ---
 
