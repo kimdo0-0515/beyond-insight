@@ -61,7 +61,7 @@ input {
     transform: translateY(-2px);
   }
   header .header-inner .gnb .trigger:before {
-    background: url("/img/icon-category-search.png");
+    background: url("../img/icon-category-search.png");
   }
   header .header-inner .gnb .trigger span {
     display: none;
