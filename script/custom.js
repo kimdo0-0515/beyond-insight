@@ -136,7 +136,7 @@ $(function(){
 
     // The Final Countdown
     $("#early-bird-countdown")
-    .countdown("2024/12/31", function(event) {
+    .countdown("2026/03/08", function(event) {
       $(this).html( // .html : html을 입력하는 메소드
         event.strftime('<b>종료까지</b> %D일 <em>%H</em>:<em>%M</em>:<em>%S</em> 남음')
       );
@@ -315,3 +315,4 @@ $(function(){
 
 
 });
+
