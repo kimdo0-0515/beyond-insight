@@ -1,7 +1,7 @@
 $(function(){
 
     // Include files
-    $('.header-include').load('/include/header.html', function(){
+    $('.header-include').load('include/header.html', function(){
 
       // Mega Navigation
       $(window).resize(function(){
@@ -71,7 +71,7 @@ $(function(){
 
     });
 
-    $('.footer-include').load('/include/footer.html', function(){
+    $('.footer-include').load('include/footer.html', function(){
       /* footer lnb */
       $('.link-item-title').click(function(){
         $(this).next().stop().slideToggle(200);
@@ -312,5 +312,6 @@ $(function(){
           }
         ]
     });
+
 
 });
